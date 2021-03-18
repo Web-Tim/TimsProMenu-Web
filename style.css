@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    background-color: rgb(23, 24, 26);
+    color: rgb(240, 240, 240);
+}
+
+.title{
+    padding-left: 3rem;
+}
+
+.info-ip{
+    padding-left: 3rem;
+}
+
+.info-views{
+    padding-left: 3rem;
+}
+
+.title__install{
+    padding-left: 3rem;
+}
+
+.card-list{
+    display: flex;
+    padding: 3rem;
+}
+
+.card-free {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: rgb(18, 19, 20);
+    box-shadow: -1rem 0 3rem #000;
+}
+
+.card-mem{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: rgb(18, 19, 20);
+    box-shadow: -1rem 0 3rem #000;
+}
+
+.download {
+    width: 350px;
+    height: 130px;
+    border: none;
+    color:rgb(240, 240, 240);
+    background-color: rgb(23, 24, 26);
+    border-radius: 4px;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+    border: 0.5mm solid #ED2939;
+    position: relative;
+    z-index: 1;
+}
+
+.download:hover {
+    cursor: pointer;
+}
+
+.download:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #ED2939;
+}
+
+.download:hover:before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+.carousel-container{
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide{
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+#prevBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    opacity: 0.7;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    transform: translateX(-45px);
+}
+
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    opacity: 0.7;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    transform: translateX(450px);
+}
+
+.controls-title{
+    padding-left: 3rem;
+}
+
+.controls{
+    padding-left: 3rem;
+}
+
+.copyright-text {
+    padding-top: 3rem;
+    padding-left: 3rem;
+}
+
+.ownrisk-text{
+    padding-left: 3rem;
+}
