@@ -17,6 +17,10 @@ updateVisitCount()
 showMenuDownloadCount()
 showPyLibDownloadCount()
 
+//SourceCode
+const imgSource = document.querySelector('.git img')
+var githubURL = "https://github.com/Web-Tim"
+
 //Counter
 let counter = 1;
 const size = carouselImages[0].clientWidth;
@@ -60,9 +64,13 @@ downloadPyLib.addEventListener('click', () => {
     updatePyLibDownloadCount()
 })  
 
+imgSource.addEventListener('click', () => {
+    window.open(githubURL, "_blank");
+})
+
 //functions
 function updateVisitCount() {
-    fetch('https://api.countapi.xyz/update/timspromenu.netlify.app/views?amount=1')
+    fetch('https://api.countapi.xyz/update/timsweb/visits?amount=1')
     .then(res => res.json())
     .then(res => {
         infoViews.textContent = 'Total Views: ' + res.value
@@ -70,7 +78,7 @@ function updateVisitCount() {
 }
 
 function updateMenuDownloadCount() {
-    fetch('https://api.countapi.xyz/update/timspromenu.netlify.app/downloads-menu?amount=1')
+    fetch('https://api.countapi.xyz/update/timsweb/downloadsMenu?amount=1')
     .then(res => res.json())
     .then(res => {
         infoDownloads_Menu.innerHTML = 'Total Downloads: ' + res.value
@@ -78,7 +86,7 @@ function updateMenuDownloadCount() {
 }
 
 function updatePyLibDownloadCount() {
-    fetch('https://api.countapi.xyz/update/timspromenu.netlify.app/downloads-pylib?amount=1')
+    fetch('https://api.countapi.xyz/update/timsweb/downloadsPyLib?amount=1')
     .then(res => res.json())
     .then(res => {
         infoDownloads_PyLib.innerHTML = 'Total Downloads: ' + res.value
@@ -86,7 +94,7 @@ function updatePyLibDownloadCount() {
 }
 
 function showMenuDownloadCount() {
-    fetch('https://api.countapi.xyz/get/timspromenu.netlify.app/downloads-menu')
+    fetch('https://api.countapi.xyz/get/timsweb/downloadsMenu')
     .then(res => res.json())
     .then(res => {
         infoDownloads_Menu.innerHTML = 'Total Downloads: ' + res.value
@@ -94,7 +102,7 @@ function showMenuDownloadCount() {
 }
 
 function showPyLibDownloadCount() {
-    fetch('https://api.countapi.xyz/get/timspromenu.netlify.app/downloads-pylib')
+    fetch('https://api.countapi.xyz/get/timsweb/downloadsPyLib')
     .then(res => res.json())
     .then(res => {
         infoDownloads_PyLib.innerHTML = 'Total Downloads: ' + res.value
@@ -102,19 +110,19 @@ function showPyLibDownloadCount() {
 }
 
 function resetAllCounts() {
-    fetch('https://api.countapi.xyz/set/timspromenu.netlify.app/views?value=0')
+    fetch('https://api.countapi.xyz/set/timsweb/visits?value=0')
     .then(res => res.json())
     .then(res => {
         infoViews.innerHTML = 'Total Views: ' + res.value
     })
 
-    fetch('https://api.countapi.xyz/set/timspromenu.netlify.app/downloads-menu?value=0')
+    fetch('https://api.countapi.xyz/set/timsweb/downloadsMenu?value=0')
     .then(res => res.json())
     .then(res => {
         infoDownloads_Menu.innerHTML = 'Total Downloads: ' + res.value
     })
     
-    fetch('https://api.countapi.xyz/set/timspromenu.netlify.app/downloads-pylib?value=0')
+    fetch('https://api.countapi.xyz/set/timsweb/downloadsPyLib?value=0')
     .then(res => res.json())
     .then(res => {
         infoDownloads_PyLib.innerHTML = 'Total Downloads: ' + res.value
